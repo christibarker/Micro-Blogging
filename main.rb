@@ -9,16 +9,16 @@ get '/' do
 	erb :home
 end
 
-get '/blank_one' do
-	erb :blank_one
+get '/profile' do
+	erb :profile
 end
 
-get '/blank_two' do
-	erb :blank_two
+get '/edit_account' do
+	erb :edit_account
 end
 
-get '/blank_two' do
-	erb :blank_two
+get '/blog' do
+	erb :blog
 end
 
 get '/thanks' do
