@@ -1,3 +1,9 @@
+body {
+	background-image: url(/img/rome051.jpg);
+	height: auto;
+	width: auto;
+}
+
 
 /**************layout.erb****************/
 #create_account_button {

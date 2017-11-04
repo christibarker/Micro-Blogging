@@ -13,6 +13,10 @@ def current_user
 end
 
 get '/' do
+	erb :home
+end
+
+get '/' do
 	@user = current_user
 	if @user
 	erb :profile
@@ -68,7 +72,7 @@ post '/sign_in' do
 		@content = params[:content]
 		redirect '/profile'
 	else
-		redirect '/sign_in'
+		redirect '/'
 	end
 end  
 
