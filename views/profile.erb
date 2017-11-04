@@ -5,7 +5,7 @@
     <div class="col-6">
     	<div class="header">
 		     <h2>Profile</h2>
-		     <p>Welcome insert name %></p>
+		     <p>Welcome <%= @name %></p>
     	</div>
     </div>
     <div class="col">
@@ -17,7 +17,7 @@
     <div class="col-6">
       <div class="content">
          <h4>Account Details</h4>
-				 <p>email insert email</p>
+				 <p>Email: <%= @email %> </p>
       </div>
     </div>
     <div class="col">
@@ -29,7 +29,8 @@
     <div class="col-6">
       <div class="content">
         <h4>Your Posts</h4>
-        <p>insert there posts here micro-blog posts to date</p>
+        <p><%= @title %></p>
+        <p><%= @content %></p>
       </div>
     </div>
     <div class="col">

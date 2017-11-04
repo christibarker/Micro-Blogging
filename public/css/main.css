@@ -59,7 +59,11 @@ text-align: right;
 }
 
 
+/**************profile.erb****************/
 
+.left {
+	text-align: left;
+}
 
 
 
