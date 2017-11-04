@@ -25,6 +25,14 @@ get '/profile' do
 	erb :profile
 end
 
+# post '/create_account' do
+# 	@name = params[:name]
+# 	@email = params[:email]
+# 	@title = params[:title]
+# 	@content = params[:content]
+# 	erb :profile
+# end
+
 get '/edit_account' do
 	erb :edit_account
 end
@@ -33,14 +41,14 @@ post '/edit_account' do
 	@name = params[:name]
 	@email = params[:email]
 	@password = params[:name]
-	redirect '/profile'
+	redirect 'profile'
 end
 
 get '/blog' do
 	erb :blog
 end
 
-post 'blog'
+post 'blog' do
 @user = User.find(content: params[:content]).first
 @user = User.create(params[:content])
 erb :blog
@@ -51,9 +59,17 @@ get '/sign_in' do
 end
 
 post '/sign_in' do
-	@user = User.find(email: params[:email], password: params[:password])
-	session[:user_id] = @user.id
-	redirect 'profile'
+	@user = User.find_by(email: params[:email], password: params[:password])
+	if @user
+		session[:user_id] = @user.id
+		@name = params[:name]
+		@email = params[:email]
+		@title = params[:title]
+		@content = params[:content]
+		redirect '/profile'
+	else
+		redirect '/sign_in'
+	end
 end  
 
 get '/create_account' do
@@ -63,6 +79,10 @@ end
 post '/create_account' do
 	@user = User.create(params[:user])
 	session[:user_id] = @user.id
+	@name = params[:name]
+	@email = params[:email]
+	@title = params[:title]
+	@content = params[:content]
 	redirect 'profile'
 end  
 

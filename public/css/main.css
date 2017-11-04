@@ -58,11 +58,23 @@ text-align: right;
 	text-align: center;
 }
 
+.left {
+	text-align: left;
+}
 
+.posts {
+	overflow: scroll;
+	background-color: lightgray;
+	height: 700px; 
+	width: 675px;
+	overflow-y: hidden;
+}
 
+/**************sign_in.erb****************/
 
-
-
+.button_two {
+	text-align: right;
+}
 
 
 
