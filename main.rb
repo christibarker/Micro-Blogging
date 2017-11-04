@@ -30,7 +30,7 @@ get '/other_user' do
 end
 
 post '/sign_in' do
-	redirect '/'
+	redirect '/profile'
 end 
 
 get '/create_account' do
@@ -38,7 +38,7 @@ get '/create_account' do
 end
 
 post '/create_account' do
-	redirect '/'
+	redirect '/profile'
 end 
 
 get '/sign_out' do
