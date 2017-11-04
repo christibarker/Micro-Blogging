@@ -1,0 +1,69 @@
+
+/**************layout.erb****************/
+#create_account_button {
+	border: solid;
+}
+
+footer, .push {
+  height: 50px;
+  width: 100%;
+  z-index: 3;
+}
+
+footer {
+	background-color: rgb(240, 240, 241);
+}
+
+/**************home.erb****************/
+
+#image {
+	height: 550px;
+	width: 675px;
+	box-shadow: 10px 10px 5px #888888;
+	margin-top: 7%;
+	border-radius: 10%;
+}
+
+.content {
+	text-align: center;
+	margin-top: 7%
+}
+
+/*.col {
+	border: solid;
+}
+*/
+/**************create_account.erb****************/
+
+.styling {
+	margin-top: 10%;
+	background-color: lightgray;
+	text-align: center;
+
+}
+
+.background {
+		background-color: lightgray;
+
+}
+
+#button {
+text-align: right;
+}
+
+/**************profile.erb****************/
+
+.header {
+	margin-top: 10%;
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+

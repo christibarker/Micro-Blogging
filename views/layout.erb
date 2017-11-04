@@ -15,7 +15,6 @@
   <body>
 
     <nav>
-      <a href="/"><img id="logo_nav" src="images/nav_logo.png"></a>
       <ul class="nav">
         <li class="nav-item">
           <a class="nav-link active" href="/">Home</a>
@@ -26,15 +25,37 @@
         <li class="nav-item">
           <a class="nav-link" href="blog">Blog</a>
         </li>
-        <li class="nav-item">
+       <!--  <li class="nav-item">
           <a class="nav-link" href="edit_account">Edit Profile</a>
+        </li> -->
+        <li class="nav-item">
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="other_user">other user</a>
+          <a class="nav-link" href="/sign_in">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="lp-navbar__button lp-navbar__button--fixed btn btn--secondary" href="/create_account" id="create_account_button">Create Account</a>
         </li>
       </ul>
     </nav>
       <%= yield %>
+      <div class="push"></div>
+      <footer class="footer">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/profile">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog">Blog</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="edit_account">Edit Profile</a>
+        </li>
+      </ul>
+    </footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
