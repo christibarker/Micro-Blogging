@@ -103,9 +103,8 @@ float: right;
 /*/**************profile.erb****************/
 
 .header_two {
-	margin-top: 10%;
 	text-align: center;
-	/*padding: 5%;*/
+	margin-top: 3%;
 }
 
 /*.left {
@@ -134,7 +133,16 @@ float: right;
 	padding-top: 4%;
 }
 
+.padding_b {
+	padding-bottom: 3%;
+}
+
 .top {
 	margin-top: 5%;
+}
+
+#content {
+/*	width: auto;*/
+	height: 80px;
 }
 
