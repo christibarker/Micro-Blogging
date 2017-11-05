@@ -2,15 +2,15 @@
   <div class="row">
     <div class="col">
     </div>
-    <div class="col-6">
-    	<div class="header">
+    <div class="col-6 background_p top">
+    	<div class="header_two">
 		    <h2>Edit Profile</h2>
   		  <p>Enter the changes you wish to make in your account.</p>
         <p>Your current information</p>
         <div class="left">
-           <p>Name: <%= @name %></p>
-           <p>Email: <%= @email %></p>
-           <p>Password: <%= @password %></p>
+           <p><strong>Name:</strong> <%= @name %></p>
+           <p><strong>Email:</strong> <%= @email %></p>
+           <p><strong>Password:</strong> <%= @password %></p>
         </div>
     	</div>
     </div>
@@ -20,8 +20,8 @@
    <div class="row">
     <div class="col">
     </div>
-    <div class="col-6">
-      <div class="content">
+    <div class="col-6 background_p">
+      <div class="padding">
         <form action="/create_account" method="POST">
         	<div class="form-group">
 	          <label for="name">Name</label>
@@ -45,8 +45,8 @@
    <div class="row">
     <div class="col">
     </div>
-    <div class="col-6">
-      <div class="content">
+    <div class="col-6 background_p">
+      <div class="padding padding_b">
        <button type="button" class="btn btn-success">Delete Account</button>
 			</div>
      </div>
