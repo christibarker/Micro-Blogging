@@ -29,7 +29,7 @@ end
 # ************profile page*****************/
 
 get '/profile' do
-	@user = User.create(title: params[:title], content: params[:content])
+	# @user = User.create(title: params[:title], content: params[:content])
 	if @user
 		erb :profile
 	else
@@ -68,13 +68,14 @@ end
 # ************sign_in page*****************/
 
 get '/sign_in' do
-		@user = User.find_by(email: params[:email], password: params[:password])
-	if @user
-		session[:user_id] = @user.id
-		redirect '/profile'
-	else
-		redirect '/'
-	end
+	# 	@user = User.find_by(email: params[:email], password: params[:password])
+	# if @user
+	# 	session[:user_id] = @user.id
+	# 	redirect '/sign_in'
+	# else
+	# 	redirect '/'
+	# end
+		erb :profile
 end
 
 post '/sign_in' do
@@ -92,7 +93,7 @@ post '/create_account' do
 	session[:user_id] = @user.id
 	if @user
 		session[:user_id] = @user.id
-		redirect '/profile'
+		redirect '/create_account'
 	else
 		redirect '/'
 	end
