@@ -1,7 +1,17 @@
+body {
+	background-image: url(/img/rome051.jpg);
+	height: auto;
+	width: auto;
+}
+
 
 /**************layout.erb****************/
 #create_account_button {
 	border: solid;
+}
+
+.nav {
+	background-color: lightgray;
 }
 
 footer, .push {
@@ -29,10 +39,10 @@ footer {
 	margin-top: 7%
 }
 
-/*.col {
+.col {
 	border: solid;
 }
-*/
+
 /**************create_account.erb****************/
 
 .styling {

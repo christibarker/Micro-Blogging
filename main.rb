@@ -12,6 +12,11 @@ def current_user
 	end
 end
 
+# ************home page*****************/
+get '/' do
+	erb :home
+end
+
 get '/' do
 	@user = current_user
 	if @user
@@ -21,17 +26,20 @@ get '/' do
 	end
 end
 
+# ************profile page*****************/
+
 get '/profile' do
+	# @user = User.create(title: params[:title], content: params[:content])
 	erb :profile
 end
 
-# post '/create_account' do
-# 	@name = params[:name]
-# 	@email = params[:email]
-# 	@title = params[:title]
-# 	@content = params[:content]
-# 	erb :profile
-# end
+post '/profile' do
+	@title = params[:title]
+	@content = params[:content]
+	redirect 'profile'
+end
+
+# ************edit account page*****************/
 
 get '/edit_account' do
 	erb :edit_account
@@ -44,15 +52,18 @@ post '/edit_account' do
 	redirect 'profile'
 end
 
+# ************blog page*****************/
+
 get '/blog' do
 	erb :blog
 end
 
 post 'blog' do
 @user = User.find(content: params[:content]).first
-@user = User.create(params[:content])
-erb :blog
+	erb :blog
 end
+
+# ************sign_in page*****************/
 
 get '/sign_in' do
 	erb :sign_in
@@ -62,15 +73,13 @@ post '/sign_in' do
 	@user = User.find_by(email: params[:email], password: params[:password])
 	if @user
 		session[:user_id] = @user.id
-		@name = params[:name]
-		@email = params[:email]
-		@title = params[:title]
-		@content = params[:content]
 		redirect '/profile'
 	else
-		redirect '/sign_in'
+		redirect '/'
 	end
 end  
+
+# ************create account page*****************/
 
 get '/create_account' do
 	erb :create_account
@@ -79,16 +88,21 @@ end
 post '/create_account' do
 	@user = User.create(params[:user])
 	session[:user_id] = @user.id
-	@name = params[:name]
-	@email = params[:email]
-	@title = params[:title]
-	@content = params[:content]
-	redirect 'profile'
+	if @user
+		session[:user_id] = @user.id
+		redirect '/profile'
+	else
+		redirect '/'
+	end
 end  
+
+# ************sign_out page*****************/
 
 get '/sign_out' do
 	redirect '/'
 end
+
+# ************delete account page*****************/
 
 get '/delete_account' do
 	redirect '/'
@@ -99,14 +113,5 @@ post '/delete_account' do
 	redirect '/'
 end
 
-# get '/thanks' do
-# 	erb :thanks
-# end
 	
-# post '/thanks' do
-# 	p params
-# 	@email = params[:email]
-# 	@message = params[:message]
-# 	erb :thanks
-# end
-# 		
+	
