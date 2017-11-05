@@ -1,5 +1,5 @@
 ${'#sign_in'}.on('click' function(
-	${'#sign_in'}.text('logout');
+	${'#sign_in'}.html('logout');
 	${'#create_account'}.text(''); 
 	);
 
