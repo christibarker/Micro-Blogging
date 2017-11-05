@@ -1,17 +1,21 @@
 body {
 	background-image: url(/img/rome051.jpg);
-	height: auto;
-	width: auto;
+	/*height: auto;
+	width: auto;*/
+	font-family: fantasy;
 }
 
 
 /**************layout.erb****************/
-#create_account_button {
-	border: solid;
+.create_account_button :hover {
+	background-color: lightblue;
+	/*border: solid;
+	border-color: red;*/
 }
 
 .nav {
 	background-color: lightgray;
+	/*border: solid;*/
 }
 
 footer, .push {
@@ -36,12 +40,13 @@ footer {
 
 .content {
 	text-align: center;
-	margin-top: 7%
+	margin-top: 7%;
+	padding: 3%;
 }
 
-.col {
+/*.col {
 	border: solid;
-}
+}*/
 
 /**************create_account.erb****************/
 
@@ -54,18 +59,21 @@ footer {
 
 .background {
 		background-color: lightgray;
+		padding: 3%;
 
 }
 
 #button {
-text-align: right;
+float: right;
 }
 
-/**************profile.erb****************/
+
+/**************blog.erb****************/
 
 .header {
 	margin-top: 10%;
 	text-align: center;
+	padding: 5%
 }
 
 .left {
@@ -78,14 +86,55 @@ text-align: right;
 	height: 700px; 
 	width: 675px;
 	overflow-y: hidden;
+	border: solid;
+}
+
+.spacing {
+	margin-top: 3%
 }
 
 /**************sign_in.erb****************/
 
-.button_two {
-	text-align: right;
+#button_two {
+	float: right;
 }
 
 
+/*/**************profile.erb****************/
 
+.header_two {
+	margin-top: 10%;
+	text-align: center;
+	/*padding: 5%;*/
+}
+
+/*.left {
+	text-align: left;
+}*/
+
+/*.posts {
+	overflow: scroll;
+	background-color: lightgray;
+	height: 700px; 
+	width: 675px;
+	overflow-y: hidden;
+	border: solid;
+}*/
+
+.background_p {
+	background-color: lightgray;
+	text-align: center;
+}
+
+#button_three {
+	float: right;
+}
+
+.padding {
+	padding-top: 4%;
+}
+
+.top {
+	margin-top: 5%;
+}
 
