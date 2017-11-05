@@ -22,15 +22,19 @@ get '/' do
 	if @user
 	erb :profile
 	else
-		redirect '/sign_in'
+		redirect '/'
 	end
 end
 
 # ************profile page*****************/
 
 get '/profile' do
-	# @user = User.create(title: params[:title], content: params[:content])
-	erb :profile
+	@user = User.create(title: params[:title], content: params[:content])
+	if @user
+		erb :profile
+	else
+		redirect '/'
+	end
 end
 
 post '/profile' do
@@ -46,9 +50,7 @@ get '/edit_account' do
 end
 
 post '/edit_account' do
-	@name = params[:name]
-	@email = params[:email]
-	@password = params[:name]
+	@user = User.update(name: params[:name], email: params[:email], password: [:password])
 	redirect 'profile'
 end
 
@@ -59,24 +61,24 @@ get '/blog' do
 end
 
 post 'blog' do
-@user = User.find(content: params[:content]).first
+	@user = User.find_by(content: params[:content]).first
 	erb :blog
 end
 
 # ************sign_in page*****************/
 
 get '/sign_in' do
-	erb :sign_in
-end
-
-post '/sign_in' do
-	@user = User.find_by(email: params[:email], password: params[:password])
+		@user = User.find_by(email: params[:email], password: params[:password])
 	if @user
 		session[:user_id] = @user.id
 		redirect '/profile'
 	else
 		redirect '/'
 	end
+end
+
+post '/sign_in' do
+	@user = current_user(name: params[:name], email: params[:email], password: [:password])
 end  
 
 # ************create account page*****************/
@@ -99,6 +101,7 @@ end
 # ************sign_out page*****************/
 
 get '/sign_out' do
+	set :sessions, false
 	redirect '/'
 end
 
