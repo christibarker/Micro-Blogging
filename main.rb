@@ -28,59 +28,67 @@ end
 
 # ************profile page*****************/
 
+# get '/profile' do
+# 	@user = current_user
+# 	if @user
+# 		erb :profile
+# 	else
+# 		redirect '/'
+# 	end
+# end
+
 get '/profile' do
-	# @user = User.create(title: params[:title], content: params[:content])
+	@user_all = User.all
+	erb :profile
+end
+
+post '/create_post' do
+	current_user.posts.create(params[:post])
+	redirect '/profile'
+end
+
+
+# ************edit account page*****************/
+
+get '/edit_account' do
+	@user = current_user
 	if @user
-		erb :profile
+		erb :edit_account
 	else
 		redirect '/'
 	end
 end
 
-post '/profile' do
-	@title = params[:title]
-	@content = params[:content]
-	redirect 'profile'
-end
-
-# ************edit account page*****************/
-
-get '/edit_account' do
-	erb :edit_account
-end
-
 post '/edit_account' do
-	@user = User.update(name: params[:name], email: params[:email], password: [:password])
+	current_user.user.update(params[:user])
 	redirect 'profile'
 end
 
 # ************blog page*****************/
 
 get '/blog' do
+		@post_all = Post.all
 	erb :blog
 end
 
-post 'blog' do
-	@user = User.find_by(content: params[:content]).first
-	erb :blog
-end
 
 # ************sign_in page*****************/
 
-get '/sign_in' do
-	# 	@user = User.find_by(email: params[:email], password: params[:password])
-	# if @user
-	# 	session[:user_id] = @user.id
-	# 	redirect '/sign_in'
-	# else
-	# 	redirect '/'
-	# end
-		erb :profile
-end
+# get '/sign_in' do
+# 	# 	@user = User.find_by(email: params[:email], password: params[:password])
+# 	# if @user
+# 	# 	session[:user_id] = @user.id
+# 	# 	redirect '/sign_in'
+# 	# else
+# 	# 	redirect '/'
+# 	# end
+# 		erb :sign_in
+# end
 
-post '/sign_in' do
-	@user = current_user(name: params[:name], email: params[:email], password: [:password])
-end  
+# post '/sign_in' do
+# 	@user = current_user
+# 	current_user.User(name: params[:name], email: params[:email], password: [:password])
+# end  
 
 # ************create account page*****************/
 
@@ -106,6 +114,11 @@ get '/sign_out' do
 	redirect '/'
 end
 
+post '/sign_out' do
+	@user = sign_out of session
+	redirect '/'
+end
+
 # ************delete account page*****************/
 
 get '/delete_account' do
@@ -115,6 +128,11 @@ end
 post '/delete_account' do
 	@user = delete user account
 	redirect '/'
+end
+
+#localhost:4567/show/1
+get '/show/:id' do
+	params[:id]
 end
 
 	
