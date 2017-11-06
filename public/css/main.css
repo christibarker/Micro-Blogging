@@ -15,6 +15,7 @@ body {
 
 .nav {
 	background-color: lightgray;
+	opacity: 0.6;
 	/*border: solid;*/
 }
 
@@ -85,12 +86,16 @@ float: right;
 	background-color: lightgray;
 	height: 700px; 
 	width: 675px;
-	overflow-y: hidden;
+	/*overflow-y: hidden;*/
 	border: solid;
 }
 
 .spacing {
 	margin-top: 3%
+}
+
+.font {
+	font-weight: bold;
 }
 
 /**************sign_in.erb****************/
@@ -144,5 +149,11 @@ float: right;
 #content {
 /*	width: auto;*/
 	height: 80px;
+}
+
+.size  {
+	height: 400px;
+	overflow: scroll;
+	background-color: lightgray;
 }
 

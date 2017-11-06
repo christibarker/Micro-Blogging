@@ -8,3 +8,8 @@ lucy.posts.create(title: 'Great Shopping', content: 'Spanish steps where a disap
 george.posts.create(title: 'Best way to Cool Off', content: 'Many people stick their feet in the fountains to cool off during the heat of the summer.')
 
 christi.posts.create(title: 'The Vatican', content: 'You can take a tour of the top of St. Peters Basilica.')
+
+
+
+
+

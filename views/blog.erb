@@ -15,8 +15,13 @@
     <div class="col-6 content posts background">
       <div>
       <h4>Blog Posts</h4>
-      <p><%= @title %></p>
-      <p><%= @content %></p>
+      <br>
+        <div>
+       <% @post_all.each do |post| %>
+        <p class="font"><%= post.title %></p>
+        <p><%= post.content %></p>
+       <% end %>
+       </div> 
       </div>
     </div>
     <div class="col">
@@ -31,3 +36,6 @@
     </div>
   </div>
 </div>
+
+
+
