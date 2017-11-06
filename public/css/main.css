@@ -23,10 +23,12 @@ footer, .push {
   height: 50px;
   width: 100%;
   z-index: 3;
+  opacity: 0.6;
 }
 
 footer {
-	background-color: rgb(240, 240, 241);
+	background-color: lightgray;;
+	/*opacity: 0.6;*/
 }
 
 /**************home.erb****************/
@@ -61,7 +63,7 @@ footer {
 .background {
 		background-color: lightgray;
 		padding: 3%;
-
+		/*opacity: 0.6;*/
 }
 
 #button {
@@ -128,6 +130,7 @@ float: right;
 .background_p {
 	background-color: lightgray;
 	text-align: center;
+	/*opacity: 0.6;*/
 }
 
 #button_three {

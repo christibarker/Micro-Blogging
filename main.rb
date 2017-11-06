@@ -28,25 +28,22 @@ end
 
 # ************profile page*****************/
 
-# get '/profile' do
-# 	@user = current_user
-# 	if @user
-# 		erb :profile
-# 	else
-# 		redirect '/'
-# 	end
-# end
-
 get '/profile' do
 	@user_all = User.all
-	erb :profile
+	@user = current_user
+	# if @user
+		erb :profile
+	# else
+	# 	redirect '/'
+	# end
 end
+
 
 post '/create_post' do
-	current_user.posts.create(params[:post])
+	@user = current_user
+	@user.posts.create(params[:post])
 	redirect '/profile'
 end
-
 
 # ************edit account page*****************/
 
@@ -60,7 +57,8 @@ get '/edit_account' do
 end
 
 post '/edit_account' do
-	current_user.user.update(params[:user])
+	@user = current_user
+	@user.update(params[:user])
 	redirect 'profile'
 end
 
@@ -74,21 +72,21 @@ end
 
 # ************sign_in page*****************/
 
-# get '/sign_in' do
-# 	# 	@user = User.find_by(email: params[:email], password: params[:password])
-# 	# if @user
-# 	# 	session[:user_id] = @user.id
-# 	# 	redirect '/sign_in'
-# 	# else
-# 	# 	redirect '/'
-# 	# end
-# 		erb :sign_in
-# end
+get '/sign_in' do
+		erb :sign_in
+end
 
-# post '/sign_in' do
-# 	@user = current_user
-# 	current_user.User(name: params[:name], email: params[:email], password: [:password])
-# end  
+post '/sign_in' do
+	@user = User.find_by(params[:user])
+	p params
+	if @user
+		session[:user_id] = @user.id
+		redirect '/profile'
+	else
+		redirect '/sign_in'
+	end  
+end
+
 
 # ************create account page*****************/
 
@@ -98,24 +96,26 @@ end
 
 post '/create_account' do
 	@user = User.create(params[:user])
-	session[:user_id] = @user.id
+	p params
 	if @user
 		session[:user_id] = @user.id
-		redirect '/create_account'
+		redirect '/profile'
 	else
-		redirect '/'
+		redirect '/create_account'
 	end
 end  
 
 # ************sign_out page*****************/
 
+get '/users/sign_out' => 'devise/sessions#destroy'
+
 get '/sign_out' do
-	set :sessions, false
 	redirect '/'
 end
 
 post '/sign_out' do
-	@user = sign_out of session
+	@user = current_user
+	set :sessions, false
 	redirect '/'
 end
 
@@ -130,10 +130,15 @@ post '/delete_account' do
 	redirect '/'
 end
 
-#localhost:4567/show/1
+# ************show page*****************/
+
+# localhost:4567/show/1
 get '/show/:id' do
-	params[:id]
+	@user = User.find(params[:id])
+	@user_all = User.all
+	erb :show
 end
 
-	
-	
+
+
+
