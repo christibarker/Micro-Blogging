@@ -53,6 +53,7 @@
       </ul>
     </nav>
       <%= yield %>
+      <% if user_signed_in_? %>
       <div class="push"></div>
       <footer class="footer">
       <ul class="nav justify-content-center">
@@ -65,6 +66,26 @@
         <li class="nav-item">
           <a class="nav-link" href="/blog">Blog</a>
         </li>
+        <li class="nav-item">
+            <a class="lp-navbar__button lp-navbar__button--fixed btn btn--secondary" href="/sign_in" id="sign_in_button">Sign In</a>
+        </li>
+        <li class="nav-item">
+            <a class="lp-navbar__button lp-navbar__button--fixed btn btn--secondary" href="/create_account" id="create_account_button">Create Account</a>
+        </li>
+        <% else %>
+        <li class="nav-item">
+          <a class="nav-link active" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/profile">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/sign_out">Sign Out</a>
+        </li>
+         <% end %>
       </ul>
     </footer>
 
