@@ -50,12 +50,17 @@
     <div class="col-6 background_p">
       <div class="padding">
         <h4>Your Posts</h4>
-        <div class="posts color padding">
+        <div class="posts padding">
           <div>
             <% @user.posts.each do |post| %>
               <p class="font"><%= post.title %></p>
               <p><%= post.content %></p>
-              <p><p><%= post.created_at %></p></p>
+              <div class="post-footer">
+                <div class="post-footer-line-1">
+                  <span>Posted by: <%= @user.name %></span>
+                  <span>at <%= post.created_at %></span>
+                  <!-- <span class="reaction-button"></span>comment -->
+                </div>
             <% end %>
           </div>
         </div>
@@ -64,7 +69,7 @@
     <div class="col">
       <div class="background_p padding">
         <h4 >Contributers</h4>
-          <div class="size color">
+          <div class="size">
             <% @user_all.each do |user| %>
               <p class="font">
                 <a href="/show/<%= user.id %>"><%= user.name %></a></p>
