@@ -12,6 +12,11 @@ def current_user
 	end
 end
 
+def user_signed_in_?
+	!session[:user_id].nil?
+	
+end
+
 # ************home page*****************/
 get '/' do
 	erb :home
@@ -107,26 +112,17 @@ end
 
 # ************sign_out page*****************/
 
-get '/users/sign_out' => 'devise/sessions#destroy'
-
 get '/sign_out' do
-	redirect '/'
-end
-
-post '/sign_out' do
-	@user = current_user
-	set :sessions, false
-	redirect '/'
+		session[:user_id] = nil
+		redirect '/'
 end
 
 # ************delete account page*****************/
 
 get '/delete_account' do
-	redirect '/'
-end
-
-post '/delete_account' do
-	@user = delete user account
+	@user = current_user
+	@user.destroy
+	session[:user_id] = nil
 	redirect '/'
 end
 

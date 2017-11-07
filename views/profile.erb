@@ -58,6 +58,7 @@
             <% @user.posts.each do |post| %>
               <p class="font"><%= post.title %></p>
               <p><%= post.content %></p>
+              <p><p><%= post.created_at %></p></p>
             <% end %>
           </div>
         </div>
@@ -91,9 +92,6 @@
     </div>
     <div class="col-6 background_p">
       <div class="padding padding_b">
-         <form action="/sign_out method=POST">
-          <button type="button" class="btn btn-success">Sign Out</button>
-       </form>
       </div>
     </div>
     <div class="col">
