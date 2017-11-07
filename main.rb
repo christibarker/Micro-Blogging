@@ -14,7 +14,6 @@ end
 
 def user_signed_in_?
 	!session[:user_id].nil?
-	
 end
 
 # ************home page*****************/
