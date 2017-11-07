@@ -28,15 +28,14 @@
     <div class="col-6 background_p">
       <div>
         <h4 class="padding_b">Posts</h4>
-        <div class="posts padding color">
+        <div class="posts padding">
           <div>
             <% @user.posts.each do |post| %>
               <p class="font"><%= post.title %></p>
-              <p><%= post.content %></p>
-              <div class="post-footer">
-                <div class="post-footer-line-1">
-                  <span>Posted by: <%= @user.name %></span>
-                  <span>at <%= post.created_at %></span>
+              <p class="font"><%= post.content %></p>
+              <div class="small">
+                  <span>Posted by: <%= @user.name %> </span>
+                  <span>on <%= post.created_at %></span>
                   <!-- <span class="reaction-button"></span>comment -->
                 </div>
             <% end %>
