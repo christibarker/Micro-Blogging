@@ -50,6 +50,8 @@ post '/create_post' do
 	redirect '/profile'
 end
 
+
+
 # ************edit account page*****************/
 
 get '/edit_account' do
@@ -135,6 +137,27 @@ get '/show/:id' do
 	erb :show
 end
 
+# ************edit posts page*****************/
+get '/posts/:id' do
+	@post = Post.find(params[:id])
+	@user = current_user
+	if @user
+		erb :posts
+	else
+		redirect '/'
+	end
+end
 
+post '/update_post' do
+	@user = current_user
+	@user.posts.update(params[:post])
+	redirect '/profile'
+end
+
+get '/delete_post/:id' do
+	@post = Post.find(params[:id])
+	@post.destroy
+	redirect '/profile'
+end
 
 

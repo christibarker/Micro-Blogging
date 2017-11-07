@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col-6 background_p top">
+    	<div class="header_two">
+		    <h2>Edit Posts</h2>
+  		  <p>Enter the changes you wish to make in your account.</p>
+    	</div>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+<!-- end of row -->
+   <div class="row">
+    <div class="col">
+    </div>
+    <div class="col-6 background_p">
+      <div class="padding">
+       <form action="/update_post" method="POST">
+        <div class="form-group">
+          <label for="text">Update Title</label>
+          <input type="text" name="post[title]" class="form-control" id="title" aria-describedby="text" value="<%= @post.title %>" placeholder="title">
+        </div>
+        <div class="form-group">
+          <label for="text">Update Post</label>
+          <input textarea= "maxlength 150" type= "text" name= "post[content]" class="form-control" id="content" value="<%= @post.content %>" placeholder="post">
+        </div>
+        <button type="submit" id="button_three" class="btn btn-primary">Submit</button>
+      </form>
+      </div>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+<!-- end of row -->
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col-6 background_p">
+      <div class="padding padding_b">
+        <a href="/delete_post/<%= post.id %>">Delete Post</a>
+      </div>
+     </div>
+     <div class="col">
+     </div>
+  </div>
+</div>
