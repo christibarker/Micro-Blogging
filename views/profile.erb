@@ -17,10 +17,10 @@
     </div>
     <div class="col-6 background_p">
       <div class="padding">
-         <h4>Account Details</h4>
-             <p class="left">Email: <%= @user.email %> </p>
-          </div>
+        <h4>Account Details</h4>
+        <p class="left">Email: <%= @user.email %> </p>
       </div>
+    </div>
     <div class="col">
     </div>
   </div>
@@ -39,10 +39,10 @@
             <label for="text">New Post</label>
             <input textarea= "maxlength 150" type= "text" name= "post[content]" class="form-control" id="content" placeholder="post">
           </div>
-         <button type="submit" id="button_three" class="btn btn-primary">Submit</button>
+          <button type="submit" id="button_three" class="btn btn-primary">Submit</button>
         </form>
       </div>
-   </div>
+     </div>
    <div class="col">
    </div>
   </div>
@@ -56,19 +56,17 @@
         <div class="posts color padding">
           <div>
             <% @user.posts.each do |post| %>
-              <div> 
                 <a href="/posts/<%= post.id %>">edit</a>
                 <a href="/delete_post/<%= post.id %>">delete</a>
-              <p class="font"><%= post.title %></p>
-              <p class="font"><%= post.content %></p>
+                <p class="font"><%= post.title %></p>
+                <p class="font"><%= post.content %></p>
               <div class="small">
                   <span>Posted by: <%= @user.name %> </span>
                   <span>on <%= post.created_at %></span>
                   <!-- <span class="reaction-button"></span>comment -->
-                </div>
+              </div>
             <% end %>
             </div>
-          </div>
         </div>
       </div>
     </div>
@@ -84,17 +82,7 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col">
-    </div>
-    <div class="col-6 background_p">
-      <div class="padding">
-      	<a href="/edit_posts" class="btn btn-primary"><strong>Edit Posts</strong></a>
-      </div>
-    </div>
-    <div class="col padding">
-    </div>
-  </div>
+<!-- end of row -->
   <div class="row">
     <div class="col">
     </div>
