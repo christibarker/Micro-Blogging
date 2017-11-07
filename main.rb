@@ -138,11 +138,11 @@ get '/show/:id' do
 end
 
 # ************edit posts page*****************/
-get '/posts/:id' do
+get '/edit_posts/:id' do
 	@post = Post.find(params[:id])
 	@user = current_user
 	if @user
-		erb :posts
+		erb :edit_posts
 	else
 		redirect '/'
 	end
