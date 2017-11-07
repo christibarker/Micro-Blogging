@@ -45,7 +45,13 @@
 
 // place a div around the search input
 // and another div id="results"
-// /then style in css
+// /then style in css height & width
 
 // then add an anchor link to take you to their page
 // list_group_item_action adds color when hovering
+//search wraper position absolute display inline block
+// results id  = css positon relative and width 100% top: 37px, left: 20px;
+
+
+
+
