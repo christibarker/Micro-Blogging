@@ -36,11 +36,11 @@ end
 get '/profile' do
 	@user_all = User.all
 	@user = current_user
-	# if @user
+	if @user
 		erb :profile
-	# else
-	# 	redirect '/'
-	# end
+	else
+		redirect '/'
+	end
 end
 
 
