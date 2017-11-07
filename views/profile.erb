@@ -4,16 +4,14 @@
     </div>
     <div class="col-6 background_p top">
     	<div class="header_two">
-		     <h2 class="font">Profile</h2>
-         <div class>
-             <h5 >Welcome <%= @user.name %></h5>
-         </div>
+         <h4 >Welcome to your Profile </h4>
+         <h4><%= @user.name %></h4>
     	</div>
     </div>
     <div class="col">
     </div>
   </div>
-   <div class="row">
+  <div class="row">
     <div class="col">
     </div>
     <div class="col-6 background_p">
@@ -22,7 +20,6 @@
              <p class="left">Email: <%= @user.email %> </p>
           </div>
       </div>
-    </div>
     <div class="col">
     </div>
   </div>
@@ -38,7 +35,7 @@
         </div>
         <div class="form-group">
           <label for="text">New Post</label>
-          <input type="text" name="post[content]" class="form-control" id="content" placeholder="post">
+          <input textarea= "maxlength 150" type= "text" name= "post[content]" class="form-control" id="content" placeholder="post">
         </div>
         <button type="submit" id="button_three" class="btn btn-primary">Submit</button>
       </form>
@@ -53,7 +50,7 @@
     <div class="col-6 background_p">
       <div class="padding">
         <h4>Your Posts</h4>
-        <div class="posts">
+        <div class="posts color padding">
           <div>
             <% @user.posts.each do |post| %>
               <p class="font"><%= post.title %></p>
@@ -66,8 +63,8 @@
     </div>
     <div class="col">
       <div class="background_p padding">
-        <h4>Contributers</h4>
-          <div class="size">
+        <h4 >Contributers</h4>
+          <div class="size color">
             <% @user_all.each do |user| %>
               <p class="font">
                 <a href="/show/<%= user.id %>"><%= user.name %></a></p>
@@ -81,7 +78,7 @@
     </div>
     <div class="col-6 background_p">
       <div class="padding">
-      	<a href="/edit_account"><strong>Edit Account</strong></a>
+      	<a href="/edit_account" class="btn btn-primary"><strong>Edit Account</strong></a>
       </div>
     </div>
     <div class="col padding">
