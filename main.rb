@@ -19,19 +19,20 @@ end
 # ************home page*****************/
 get '/' do
 	@body_class = 'home'
-	@user = current_user
-	if @user
-		erb :profile
-	else
-		redirect '/'
-	end
+	# @user = current_user
+	# if @user
+		erb :home
+	# else
+	# 	redirect '/profile'
+	# end
 end
 
 # ************profile page*****************/
 
 get '/profile' do
 	@body_class = 'profile'
-	@user_all = User.all
+	@user = current_user
+	@user_all = User.all.reject{|user| user == @user}
 	@user = current_user
 	if @user
 		erb :profile
@@ -135,7 +136,7 @@ end
 get '/show/:id' do
 	@body_class = 'show'
 	@user = User.find(params[:id])
-	@user_all = User.all
+	@user_all = User.all.reject{|user| user == @user}
 	erb :show
 end
 
