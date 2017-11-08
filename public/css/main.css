@@ -5,7 +5,7 @@ body {
 }
 
 .home {
-	background-image: url(/img/vatican_courtyard.jpg);
+	background-image: url(/img/city_scape.jpg);
 }
 
 .profile {
@@ -21,11 +21,11 @@ body {
 }
 
 .blog {
-	background-image: url(/img/coluseum.jpg);
+	background-image: url(/img/vatican_courtyard.jpg);
 }
 
 .create_account {
-	background-image: url(/img/city_scape.jpg);
+	background-image: url(/img/rome_122.jpg);
 }
 
 .show {
@@ -37,7 +37,7 @@ body {
 }
 
 .update_posts {
-	background-image: url(/img/milan.jpg);
+	background-image: url(/img/coluseum.jpg);
 }
 
 
@@ -81,8 +81,8 @@ footer {
 
 /*.col {
 	border: solid;
-}*/
-
+}
+*/
 /**************create_account.erb****************/
 
 .styling {
