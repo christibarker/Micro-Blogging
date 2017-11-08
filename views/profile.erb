@@ -58,9 +58,9 @@
         <div class="posts padding">
           <div>
             <% @user.posts.each do |post| %>
-                <a class="right" href="/edit_posts/<%= post.id %>">edit</a>
+                <a class="right" href="/edit_posts/<%= post.id %>"><img class="format" src="/img/edit.png" alt=""></a>
                 <br>
-                <a class="right_1" href="/delete_post/<%= post.id %>">delete</a>
+                <a class="right_1" href="/delete_post/<%= post.id %>"><img class="format" src="/img/delete-icon.png" alt=""></a>
                 <p class="font"><%= post.title %></p>
                 <p class="font"><%= post.content %></p>
               <div class="small">

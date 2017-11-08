@@ -135,8 +135,9 @@ end
 # localhost:4567/show/1
 get '/show/:id' do
 	@body_class = 'show'
+	@user_one = current_user
 	@user = User.find(params[:id])
-	@user_all = User.all.reject{|user| user == @user}
+	@user_all = User.all.reject{|user| user == @user_one}
 	erb :show
 end
 
