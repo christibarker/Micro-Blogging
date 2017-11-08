@@ -41,10 +41,8 @@ body {
 }
 
 
-
-
-
 /**************layout.erb****************/
+
 .create_account_button :hover {
 	background-color: lightblue;
 	/*border: solid;
@@ -157,19 +155,6 @@ h4 {
 	margin-top: 3%;
 }
 
-/*.left {
-	text-align: left;
-}*/
-
-/*.posts {
-	overflow: scroll;
-	background-color: lightgray;
-	height: 700px; 
-	width: 675px;
-	overflow-y: hidden;
-	border: solid;
-}*/
-
 .background_p {
 	background-color: rgba(239, 229, 211, 0.6);
 	text-align: center;
@@ -202,15 +187,17 @@ h4 {
 	overflow: scroll;
 }
 
-.right {
-	float: right;
-}
-.right_1 {
+.format {
+	height: 20px;
+	width: 20px;
 	float: right;
 }
 
 /*/**************edit post.erb****************/
 
+.form-control {
+	line-height: 2.0;
+}
 
 .edit_posts {
 	overflow: scroll;
