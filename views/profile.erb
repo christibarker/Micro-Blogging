@@ -65,7 +65,7 @@
                 <p class="font"><%= post.content %></p>
               <div class="small">
                   <span>Posted by: <%= @user.name %> </span>
-                  <span>on <%= post.created_at %></span>
+                  <span>on <%= post.created_at.to_formatted_s(:short) %></span>
                   <!-- <span class="reaction-button"></span>comment -->
               </div>
             <% end %>
