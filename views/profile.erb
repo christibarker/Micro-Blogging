@@ -55,12 +55,12 @@
     <div class="col-6 background_p">
       <div class="padding">
         <h4>Your Posts</h4>
-        <div class="posts padding">
+        <div class="posts padding left">
           <div>
             <% @user.posts.each do |post| %>
-                <a class="right" href="/edit_posts/<%= post.id %>"><img class="format" src="/img/edit.png" alt=""></a>
+                <a href="/edit_posts/<%= post.id %>"><img class="format" src="/img/edit.png" alt=""></a>
                 <br>
-                <a class="right_1" href="/delete_post/<%= post.id %>"><img class="format" src="/img/delete-icon.png" alt=""></a>
+                <a href="/delete_post/<%= post.id %>"><img class="format" src="/img/delete-icon.png" alt=""></a>
                 <p class="font"><%= post.title %></p>
                 <p class="font"><%= post.content %></p>
               <div class="small">
