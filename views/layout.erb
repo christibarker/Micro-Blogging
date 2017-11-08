@@ -13,7 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="javascript/main.js"></script>
   </head>
-  <body>
+  <body class="<%= @body_class %>">
 
     <nav>
       <ul class="nav">
@@ -26,6 +26,9 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="blog">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/show">Contributors</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/sign_out">Sign Out</a>
@@ -53,10 +56,27 @@
       </ul>
     </nav>
       <%= yield %>
-      <% if user_signed_in_? %>
+      
       <div class="push"></div>
       <footer class="footer">
       <ul class="nav justify-content-center">
+        <% if user_signed_in_? %>
+        <li class="nav-item">
+          <a class="nav-link active" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/profile">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog">Blog</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link" href="/show">Contributors</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/sign_out">Sign Out</a>
+        </li>
+        <% else %>
         <li class="nav-item">
           <a class="nav-link active" href="/">Home</a>
         </li>
@@ -71,19 +91,6 @@
         </li>
         <li class="nav-item">
             <a class="lp-navbar__button lp-navbar__button--fixed btn btn--secondary" href="/create_account" id="create_account_button">Create Account</a>
-        </li>
-        <% else %>
-        <li class="nav-item">
-          <a class="nav-link active" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/profile">Profile</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/blog">Blog</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/sign_out">Sign Out</a>
         </li>
          <% end %>
       </ul>

@@ -14,18 +14,14 @@ end
 
 def user_signed_in_?
 	!session[:user_id].nil?
-	
 end
 
 # ************home page*****************/
 get '/' do
-	erb :home
-end
-
-get '/' do
+	@body_class = 'home'
 	@user = current_user
 	if @user
-	erb :profile
+		erb :profile
 	else
 		redirect '/'
 	end
@@ -34,6 +30,7 @@ end
 # ************profile page*****************/
 
 get '/profile' do
+	@body_class = 'profile'
 	@user_all = User.all
 	@user = current_user
 	if @user
@@ -55,6 +52,7 @@ end
 # ************edit account page*****************/
 
 get '/edit_account' do
+	@body_class = 'edit_account'
 	@user = current_user
 	if @user
 		erb :edit_account
@@ -72,6 +70,7 @@ end
 # ************blog page*****************/
 
 get '/blog' do
+	@body_class = 'blog'
 		@post_all = Post.all
 	erb :blog
 end
@@ -80,6 +79,7 @@ end
 # ************sign_in page*****************/
 
 get '/sign_in' do
+	@body_class = 'sign_in'
 		erb :sign_in
 end
 
@@ -98,6 +98,7 @@ end
 # ************create account page*****************/
 
 get '/create_account' do
+	@body_class = 'create_account'
 	erb :create_account
 end
 
@@ -132,23 +133,26 @@ end
 
 # localhost:4567/show/1
 get '/show/:id' do
+	@body_class = 'show'
 	@user = User.find(params[:id])
 	@user_all = User.all
 	erb :show
 end
 
 # ************edit posts page*****************/
-get '/posts/:id' do
+get '/edit_posts/:id' do
+	@body_class = 'edit_posts'
 	@post = Post.find(params[:id])
 	@user = current_user
 	if @user
-		erb :posts
+		erb :edit_posts
 	else
 		redirect '/'
 	end
 end
 
 post '/update_post' do
+	@body_class = 'update_posts'
 	@user = current_user
 	@user.posts.update(params[:post])
 	redirect '/profile'

@@ -1,4 +1,4 @@
-body {
+.home {
 	background-image: url(/img/vatican_courtyard.jpg);
 	/*height: auto;
 	width: auto;*/
@@ -6,6 +6,81 @@ body {
 	background-size: cover;
 	background-repeat: no-repeat;
 }
+
+.profile {
+	background-image: url(/img/trevi_fountain.jpg);
+	/*height: auto;
+	width: auto;*/
+	font-family: fantasy;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.sign_in {
+	background-image: url(/img/tomb_of_unknown.jpg);
+	/*height: auto;
+	width: auto;*/
+	font-family: fantasy;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.edit_account {
+	background-image: url(/img/rome051.jpg);
+	/*height: auto;
+	width: auto;*/
+	font-family: fantasy;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.blog {
+	background-image: url(/img/coluseum.jpg);
+	/*height: auto;
+	width: auto;*/
+	font-family: fantasy;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.create_account {
+	background-image: url(/img/city_scape.jpg);
+	/*height: auto;
+	width: auto;*/
+	font-family: fantasy;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.show {
+	background-image: url(/img/rome076.jpg);
+	/*height: auto;
+	width: auto;*/
+	font-family: fantasy;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.edit_posts {
+	background-image: url(/img/rome.jpg);
+	/*height: auto;
+	width: auto;*/
+	font-family: fantasy;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.update_posts {
+	background-image: url(/img/rome.jpg);
+	/*height: auto;
+	width: auto;*/
+	font-family: fantasy;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+
+
 
 
 /**************layout.erb****************/
