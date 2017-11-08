@@ -37,11 +37,11 @@
 // erb :search_results, layout: false     //turn off layout
 
 // put on list page use boostrap list group to display info
-// /<ul class="list_group"
+// div class="list_group"
 // <% @User.each do |user| %>
-// <li class="list_group_item"> <%= user.name %></li>
+// anchor tag class="list_group_item"> <%= user.name %>
 // <% end %>
-// </ul>
+// 
 
 // place a div around the search input
 // and another div id="results"
