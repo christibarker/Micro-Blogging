@@ -65,7 +65,7 @@ end
 post '/edit_account' do
 	@user = current_user
 	@user.update(params[:user])
-	redirect 'profile'
+	redirect '/profile'
 end
 
 # ************blog page*****************/

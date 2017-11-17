@@ -58,14 +58,16 @@
         <div class="posts padding left">
           <div>
             <% @user.posts.each do |post| %>
-                <a href="/edit_posts/<%= post.id %>"><img class="format" src="/img/edit.png" alt=""></a>
-                <br>
-                <a href="/delete_post/<%= post.id %>"><img class="format" src="/img/delete-icon.png" alt=""></a>
+                
+               
                 <p class="font"><%= post.title %></p>
                 <p class="font"><%= post.content %></p>
               <div class="small">
                   <span>Posted by: <%= @user.name %> </span>
                   <span>on <%= post.created_at.to_formatted_s(:short) %></span>
+                   <span><a href="/delete_post/<%= post.id %>"><img class="format" src="/img/delete-icon.png" alt=""></a></span>
+                   <span><a href="/edit_posts/<%= post.id %>"><img class="format" src="/img/edit.png" alt=""></a>
+                <br></span>
                   <!-- <span class="reaction-button"></span>comment -->
               </div>
             <% end %>
